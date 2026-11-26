@@ -1,0 +1,63 @@
+{
+  "name": "@bpmn-io/element-template-changelog",
+  "version": "0.0.0",
+  "description": "Review the changes of element template updates and migrations",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js",
+    "./assets/element-template-changelog.css": "./assets/element-template-changelog.css",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "all": "run-s lint lint:theme test",
+    "lint": "eslint .",
+    "test": "karma start karma.conf.cjs",
+    "dev": "npm test -- --no-single-run --auto-watch",
+    "start": "cross-env SINGLE_START=true npm run dev",
+    "lint:theme": "bpmn-io-theme-validate assets/element-template-changelog.css"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Nico Rehwaldt",
+    "url": "https://github.com/nikku"
+  },
+  "repository": "https://github.com/bpmn-io/element-template-changelog.git",
+  "license": "MIT",
+  "peerDependencies": {
+    "diagram-js": ">= 15.15.0"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "lib",
+    "assets"
+  ],
+  "devDependencies": {
+    "@bpmn-io/properties-panel": "^3.60.2",
+    "@bpmn-io/theme": "^0.3.0",
+    "bpmn-js": "^18.33.1",
+    "bpmn-js-element-templates": "^2.40.3",
+    "bpmn-js-properties-panel": "^5.65.4",
+    "camunda-bpmn-js-behaviors": "^1.18.0",
+    "chai": "^6.3.0",
+    "cross-env": "^10.1.0",
+    "diagram-js": "^15.30.1",
+    "eslint": "^9.39.5",
+    "eslint-plugin-bpmn-io": "^2.4.0",
+    "karma": "^6.4.4",
+    "karma-chrome-launcher-2": "^3.3.0",
+    "karma-debug-launcher": "^0.0.5",
+    "karma-env-preprocessor": "^0.1.1",
+    "karma-firefox-launcher": "^2.1.3",
+    "karma-mocha": "^2.0.1",
+    "karma-tldr-reporter": "^1.0.0",
+    "karma-webpack": "^5.0.1",
+    "mocha": "^12.0.3",
+    "npm-run-all2": "^9.0.4",
+    "webpack": "^5.112.2",
+    "zeebe-bpmn-moddle": "^2.0.0"
+  }
+}

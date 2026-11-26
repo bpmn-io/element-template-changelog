@@ -1,0 +1,82 @@
+/**
+ * Semantic tokens, copied from `@bpmn-io/theme` to style the changelog
+ * according to this theme.
+ *
+ * Names and values of the tokens should stay intact with the `@bpmn-io/theme`
+ * source of truth, to ensure matching styles and allow overrides with an
+ * alternative theme.
+ */
+.bio-theme-parent {
+  --bio-surface-overlay: hsl(0, 0%, 100%);
+  --bio-text: hsl(225, 10%, 15%);
+  --bio-border-subtle: hsl(225, 10%, 85%);
+  --bio-info: hsl(205, 100%, 40%);
+  --bio-shadow: hsla(0, 0%, 0%, 30%);
+  --bio-radius-lg: 4px;
+}
+
+.element-template-changelog {
+  --changelog-backdrop-color: hsla(0, 0%, 16%, 20%);
+  --changelog-background-color: var(--bio-surface-overlay);
+  --changelog-color: var(--bio-text);
+  --changelog-border-color: var(--bio-border-subtle);
+  --changelog-link-color: var(--bio-info);
+  --changelog-shadow-color: var(--bio-shadow);
+  --changelog-border-radius: var(--bio-radius-lg);
+  --changelog-spacing: 16px;
+
+  flex-direction: column;
+  width: min(640px, calc(100vw - 40px));
+  max-height: 80vh;
+  padding: 0;
+  border: none;
+  background: var(--changelog-background-color);
+  color: var(--changelog-color);
+  border-radius: var(--changelog-border-radius);
+  box-shadow: 0 1px 4px var(--changelog-shadow-color);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.element-template-changelog[open] {
+  display: flex;
+}
+
+.element-template-changelog::backdrop {
+  background: var(--changelog-backdrop-color);
+}
+
+.element-template-changelog > * {
+  margin: 0;
+  padding: var(--changelog-spacing);
+}
+
+.element-template-changelog .changes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--changelog-spacing);
+  min-height: 0;
+  overflow: auto;
+  border-block: solid 1px var(--changelog-border-color);
+}
+
+.element-template-changelog h4 {
+  margin: 0;
+}
+
+.element-template-changelog pre {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.element-template-changelog a {
+  color: var(--changelog-link-color);
+}
+
+.element-template-changelog .actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
